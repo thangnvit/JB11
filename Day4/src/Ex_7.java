@@ -2,9 +2,9 @@
 import java.util.Scanner;
 import java.util.StringJoiner;
 
-public class Main {
+public class Ex_7 {
     public static void main(String[] args) {
-        String s = "ABCDDCBA";
+        String s = "ABCDDCDA";
         System.out.println(checkString(s));
     }
 
