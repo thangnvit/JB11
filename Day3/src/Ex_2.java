@@ -7,7 +7,7 @@ import java.lang.Math;
 import static java.lang.Math.scalb;
 import static java.lang.Math.sqrt;
 
-public class Ex_2 {
+public class Ex_2{
     private float a;
     private float b;
     private float c;
@@ -26,15 +26,15 @@ public class Ex_2 {
         b = scan.nextFloat();
         c = scan.nextFloat();
         delta =(b*b - 4*a*c);
-        if(delta < 0 )
+        if(delta < 0)
         {
             System.out.println("Phuong trinh vo nghiem");
         }
         else
         {
-            if(delta == 0)
+            if(delta ==0)
             {
-                System.out.println("Phuong trinh co nghiem kep x = " + (-b / 2*a));
+                System.out.println("Phuong trinh co nghiem kep x = " + ((-b) / (2*a)));
             }
             else
             {

@@ -53,26 +53,6 @@ public class Ex_13 {
         return number;
     }
 
-    //xoa
-    public void delete(int number) {
-        for (int i = foundIndex(number); i < n-1; i++) {
-            myArray[i] = myArray[i + 1];
-        }
-            n--;
-    }
-//    public void insert(int number){
-//      //  System.out.println(foundIndex(number));
-//        for(int i=n;i>foundIndex(number);i--){
-//            myArray[i] = myArray[i-1];
-//            System.out.println(myArray[i]);
-//        }
-////       myArray[foundIndex(number)+1] = values;
-    public void edit(int number,int values){
-
-            myArray[foundIndex(number)] = values;
-
-    }
-
     public static void main(String[] args) {
         Ex_13 ex13 = new Ex_13();
         Scanner scan = new Scanner(System.in);
@@ -80,22 +60,11 @@ public class Ex_13 {
         int values;
         System.out.println("Nhap do rong cua mang");
         ex13.inPut();
-//        System.out.println("Cac phan tu trong mang");
-//        ex13.outPut();
+        System.out.println("Cac phan tu trong mang");
+        ex13.outPut();
         System.out.println("Phan tu lon nhat = " + ex13.foundMax() + "  Chi so: " + (ex13.foundIndex(ex13.foundMax())+1));
         System.out.println("Phan tu nho nhat = " + ex13.foundMin() + "  Chi so: " + (ex13.foundIndex(ex13.foundMin())+1));
-//        System.out.println("Nhap so can xoa:");
-//        num = scan.nextInt();
-//        ex13.delete(num);
-//        System.out.println("Sau khi them ta duoc mang:");
-//        ex13.outPut();
-        System.out.println("Nhap vi tri sua sau so:");
-        num = scan.nextInt();
-        System.out.println("Nhap gia tri:");
-        values = scan.nextInt();
-        ex13.edit(num,values);
-        System.out.println("Sau khi sua ta duoc mang:");
-        ex13.outPut();
+
 
     }
 }

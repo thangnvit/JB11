@@ -14,14 +14,9 @@ public class Ex_3 {
         month = scan.nextInt();
         System.out.println("Nhap vao ngay cua thang:");
         dayOfMonth = scan.nextInt();
-        if(month == 1)
+        if(month == 1 || month == 2)
         {
-            month = 13;
-            year = year -1;
-        }
-        if(month == 2)
-        {
-            month = 14;
+            month +=12;
             year = year -1;
         }
         q = dayOfMonth;
@@ -29,9 +24,8 @@ public class Ex_3 {
         j = year/100;
         k= year%100;
         h = ( q + (26*(m+1)/10) + k +  k/4 + j/4 + 5*j) % 7;
-        System.out.println("Ngay cua tuan la thu " + h);
-
-
+        if(h == 0)
+            System.out.println("");
     }
 
     public static void main(String[] args) {

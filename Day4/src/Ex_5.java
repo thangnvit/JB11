@@ -27,6 +27,6 @@ public class Ex_5 {
             entry++;
         }while(num !=0);
         System.out.println("Tong cac so nguyen vua nhap la:" + ex5.total(num));
-        System.out.println("Trung binh cong cac so nguyen vua nhap:" + ex5.total(num)/entry);
+        System.out.println("Trung binh cong cac so nguyen vua nhap:" + (float)ex5.total(num)/entry);
     }
 }
