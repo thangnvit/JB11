@@ -24,8 +24,6 @@ public class Ex_3 {
         j = year/100;
         k= year%100;
         h = ( q + (26*(m+1)/10) + k +  k/4 + j/4 + 5*j) % 7;
-        if(h == 0)
-            System.out.println("");
     }
 
     public static void main(String[] args) {
