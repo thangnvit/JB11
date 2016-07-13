@@ -11,11 +11,6 @@ public class Student {
     private int scores;
 
     public Student() {
-        name = null;
-        birthday = null;
-        studentCode = null;
-        address = null;
-
     }
 
     public Student(String name, String studentCode, String birthday, String address) {
@@ -23,6 +18,7 @@ public class Student {
         this.studentCode = studentCode;
         this.birthday = birthday;
         this.address = address;
+        this.scores = scores;
     }
 
     public void setName(String name) {

@@ -43,9 +43,13 @@ public class Ex_1 {
                     mngStudent.showListStudent();
                     break;
                 case 4:
+                    String newStudentCode,name,birthDay,address,scores;
                     System.out.println("Mời bạn nhập vào mã sinh viên của sinh viên cần thay đổi thông tin:");
                     scan.nextLine();
                     studentCode = scan.nextLine();
+                    System.out.println("Nhập tên:");
+                    name = scan.nextLine();
+                    System.out.println();
                     mngStudent.editStudent(studentCode);
                     System.out.println("Danh sách sau khi sửa:");
                     mngStudent.showListStudent();

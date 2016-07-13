@@ -4,69 +4,37 @@ public class Ex_14 {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int n, index, values;
-        System.out.println("Nhap do rong mang:");
+        int n;
         n = scan.nextInt();
-        int[] arr = new int[100];
-        inPut(arr, n);
-        System.out.println("Nhap vi tri can them:");
-        index = scan.nextInt();
-        System.out.println("Nhap gia tri can them:");
-        values = scan.nextInt();
-        n = insertArr(arr, n, index, values);
-        System.out.println("Cac phan tu cua mang");
-        outPut(arr, n);
-        System.out.println("Nhap vi tri can xoa:");
-        index = scan.nextInt();
-        n = deleteArr(arr, n, index);
-        System.out.println("Cac phan tu cua mang");
-        outPut(arr, n);
-        System.out.println("Nhap vi tri can sua:");
-        index = scan.nextInt();
-        System.out.println("Nhap gia tri can sua:");
-        values = scan.nextInt();
-        editArr(arr, n, index, values);
-        System.out.println("Cac phan tu cua mang");
-        outPut(arr, n);
+        int[] arr = new int[n];
+        input(arr,n);
+ //       output(arr);
+        int[] newarr = insert(arr,2,4);
+        output(newarr);
     }
-
-    //Ham nhap
-    public static void inPut(int arr[], int n) {
+    public static void input(int arr[],int n){
         Scanner scan = new Scanner(System.in);
-        for (int i = 0; i < n; i++) {
-            System.out.println("Nhap phan tu thu " + i);
+        for(int i=0;i<n;i++){
             arr[i] = scan.nextInt();
         }
     }
 
-    //Ham xuat
-    public static void outPut(int arr[], int n) {
-        for (int i = 0; i < n; i++) {
-            System.out.println(arr[i]);
+    public static void output(int arr[]){
+        for(int i=0;i<arr.length;i++){
+            System.out.printf("%2d",arr[i]);
         }
     }
 
-    //Ham them
-    public static int insertArr(int arr[], int n, int index, int values) {
-        for (int i = n - 1; i >= index; i--) {
-            arr[i + 1] = arr[i];
-        }
-        arr[index] = values;
-        n++;
-        return n;
-    }
+    public static int[] insert(int arr[], int index, int values){
 
-    //Ham xoa
-    public static int deleteArr(int arr[], int n, int index) {
-        for (int i = index; i < n - 1; i++) {
-            arr[i] = arr[i + 1];
+        int[] newArr = new int[arr.length+1];
+        for(int i=0;i<index;i++){
+            newArr[i] = arr[i];
         }
-        n--;
-        return n;
-    }
-
-    //Ham sua
-    public static void editArr(int arr[], int n, int index, int values) {
-        arr[index] = values;
+        newArr[index] = values;
+        for(int i=index+1;i<newArr.length;i++){
+            newArr[i] = arr[i-1];
+        }
+        return newArr;
     }
 }

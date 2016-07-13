@@ -1,20 +1,5 @@
-
-import java.util.Scanner;
-import java.util.StringJoiner;
-
 public class Main {
     public static void main(String[] args) {
-        String s = "ABCDDCBA";
-        System.out.println(checkString(s));
+        Student
     }
-
-    public static boolean checkString(String s) {
-        boolean check =true;
-        for (int i = 0; i < (s.length() / 2); i++) {
-            if (s.charAt(i) != s.charAt(s.length() - i-1)) {
-                check = false;
-            }
-        }
-        return check;
     }
-}
