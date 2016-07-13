@@ -3,7 +3,7 @@
  */
 public class Class {
     public static void main(String[] args) {
-        Student student = new Student("Thang","Sing vien",30);
+        Student student = new Student("lan",10,"100");
         System.out.println(student.gioiThieu());
     }
 }

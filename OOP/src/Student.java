@@ -1,57 +1,36 @@
 /**
  * Created by DEV on 7/13/2016.
  */
-public class Student {
-    private String name;
-    private int age;
-    private String job;
-    private long forfeit;
+public class Student extends Human{
+    private String ngheNghiep;
+    private long tienPhat;
 
-    public Student() {
+    public Student(String name,int age, String ngheNghiep) {
+        super(name,age);
+        this.ngheNghiep = ngheNghiep;
     }
 
-    public Student(String name, String job, int age) {
-        this.name = name;
-        this.job = job;
-        this.age = age;
+    public String getNgheNghiep() {
+        return ngheNghiep;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public long getTienPhat() {
+        return tienPhat;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setNgheNghiep(String ngheNghiep) {
+        this.ngheNghiep = ngheNghiep;
     }
 
-    public void setJob(String job) {
-        this.job = job;
-    }
-
-    public void setForfeit(long forfeit) {
-        this.forfeit = forfeit;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public long getForfeit() {
-        return forfeit;
-    }
-
-    public String getJob() {
-        return job;
-    }
-
-    public int getAge() {
-        return age;
+    public void setTienPhat(long tienPhat) {
+        this.tienPhat = tienPhat;
     }
 
     public void diMuon(){
-        forfeit = forfeit +10;
+        tienPhat = tienPhat+10;
     }
     public String gioiThieu(){
-        return ("Em ten la:" + getName() + "\n" + "Tuoi: " + getAge() +"\n"+"Nghe nghiep:"+getJob()+"\n"+"Tien phat:"+getForfeit());
+
+        return ("Toi ten la:" + getName() + "\n" + "Tuoi: " + getAge() +"\n"+"Nghe nghiep:"+getNgheNghiep()+"\n"+"Tien phat:"+getTienPhat());
     }
 }
