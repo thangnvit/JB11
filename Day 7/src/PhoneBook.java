@@ -24,7 +24,7 @@ public class PhoneBook {
 
     public PhoneEntry findEntryByName(String entryName) {
         for (int i = 0; i < phoneEntries.length; i++) {
-            if (phoneEntries[i].getName() == entryName) {
+            if (phoneEntries[i].getName().compareTo(entryName) == 0) {
                 return phoneEntries[i];
             }
         }
@@ -34,7 +34,7 @@ public class PhoneBook {
     public void deleteEntry(String entryName) {
 
         for (int i = 0; i < phoneEntries.length - 1; i++) {
-            if (phoneEntries[i].getName() == entryName) {
+            if (phoneEntries[i].getName().compareTo(entryName) == 0) {
                 for (i = 0; i < phoneEntries.length - 1; i++) {
                     phoneEntries[i] = phoneEntries[i + 1];
                 }
@@ -47,10 +47,9 @@ public class PhoneBook {
         phoneEntries = newPhoneEntries;
     }
 
-    public void editEntry(String entryName, String newName, String[] newPhoneNumber) {
+    public void editEntry(String entryName,String[] newPhoneNumber) {
         for (int i = 0; i < phoneEntries.length; i++) {
-            if (phoneEntries[i].getName() == entryName) {
-                phoneEntries[i].setName(newName);
+            if (phoneEntries[i].getName().compareTo(entryName) == 0) {
                 phoneEntries[i].setPhoneNumber(newPhoneNumber);
             }
         }
@@ -68,14 +67,14 @@ public class PhoneBook {
 
     public boolean isDuplicateName(String entryName){
         for(int i=0;i<phoneEntries.length;i++){
-            if(phoneEntries[i].getName() == entryName)
+            if(phoneEntries[i].getName().compareTo(entryName) == 0)
                 return true;
         }
         return  false;
     }
-    public boolean isDuplicateNumber(String[] entryNumber){
+    public boolean isDuplicateNumber(String entryNumber){
         for(int i=0;i<phoneEntries.length;i++){
-            if(phoneEntries[i].getPhoneNumber() == entryNumber)
+            if(phoneEntries[i].isDuplicateNumber(entryNumber))
                 return true;
         }
         return  false;

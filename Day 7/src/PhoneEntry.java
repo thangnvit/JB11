@@ -1,6 +1,4 @@
-/**
- * Created by DEV on 7/11/2016.
- */
+
 public class PhoneEntry {
     private String name;
     private String[] phoneNumber = new String[0];
@@ -29,19 +27,36 @@ public class PhoneEntry {
     public void setPhoneNumber(String[] phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    public void addPhoneNumber(String newphoneNumber){
-        String[] newPhoneNumber = new String[phoneNumber.length+1];
-        for(int i=0;i<phoneNumber.length;i++){
+
+    public void addPhoneNumber(String addPhoneNumber) {
+        String[] newPhoneNumber = new String[phoneNumber.length + 1];
+        for (int i = 0; i < phoneNumber.length; i++) {
             newPhoneNumber[i] = phoneNumber[i];
         }
-        newPhoneNumber[phoneNumber.length] = newphoneNumber;
+        newPhoneNumber[phoneNumber.length] = addPhoneNumber;
         phoneNumber = newPhoneNumber;
     }
-    public String toString(){
+
+    public void deletePhoneNumber() {
+        String[] newPhoneNumber = new String[0];
+        phoneNumber = newPhoneNumber;
+
+    }
+
+    public boolean isDuplicateNumber(String newNumber) {
+        for (int i = 0; i < phoneNumber.length; i++) {
+            if (phoneNumber[i].compareTo(newNumber) == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String toString() {
         String[] arrayPhoneNumber = getPhoneNumber();
-        String phoneEntry= getName();
-        for(int i=0;i<phoneNumber.length;i++){
-             phoneEntry = phoneEntry+ " "+arrayPhoneNumber[i]+" ";
+        String phoneEntry = getName();
+        for (int i = 0; i < phoneNumber.length; i++) {
+            phoneEntry = phoneEntry + " " + arrayPhoneNumber[i] + " ";
         }
         return phoneEntry;
     }
