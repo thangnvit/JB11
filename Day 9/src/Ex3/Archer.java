@@ -3,6 +3,7 @@ package Ex3;
 public class Archer extends Character {
     public Archer(String name) {
         this.setWeapon(null);
+        this.setArmor(null);
         this.setName(name);
         this.setLevel(1);
         this.setStrength(1);
