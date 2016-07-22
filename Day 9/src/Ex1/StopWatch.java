@@ -5,7 +5,7 @@ import java.util.*;
 public class StopWatch {
     private long startTime;
     private long endTime;
-    private boolean running = false ;
+    private boolean running = false;
 
     public StopWatch() {
         this.startTime = System.currentTimeMillis();
@@ -25,11 +25,10 @@ public class StopWatch {
     }
 
     public long stop() {
-        if (running) {
-            endTime = (System.currentTimeMillis() - getStartTime());
-            return endTime;
-        }
-        running = false;
-        return 0;
+//        if (running) {
+        endTime = (System.currentTimeMillis() - getStartTime());
+        return endTime;//}
+        //           running = false;
+//       return 0;
     }
 }

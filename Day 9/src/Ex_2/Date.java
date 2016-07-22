@@ -6,16 +6,14 @@ public class Date {
     private int year;
 
     public Date() {
-        day=0;
-        month=0;
-        year=0;
+        day = 22;
+        month = 11;
+        year = 2000;
     }
 
-//    public Date(int day, int year, int month) {
-//        this.day = day;
-//        this.year = year;
-//        this.month = month;
-//    }
+    public String toString() {
+        return day + "/" + month + "/" + year;
+    }
 
 
 }

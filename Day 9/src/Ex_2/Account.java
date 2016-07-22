@@ -1,13 +1,33 @@
 package Ex_2;
 
-public class Account extends Date{
+public class Account {
     private int id;
     private double sodu;
     private double laiSuatNam;
-    private Date ngayTao;
+    private Date ngayTao = new Date();
+    ;
 
     public Account() {
-        super();
+    }
+
+    public Account(int id, double sodu) {
+        this.id = id;
+        this.sodu = sodu;
+    }
+
+    public void setId(int id) {
+        if (id > 0)
+            this.id = id;
+    }
+
+    public void setSodu(double sodu) {
+        if (id > 0)
+            this.sodu = sodu;
+    }
+
+    public void setLaiSuatNam(double laiSuatNam) {
+        if (id > 0)
+            this.laiSuatNam = laiSuatNam;
     }
 
     public int getId() {
@@ -25,10 +45,25 @@ public class Account extends Date{
     public Date getNgayTao() {
         return ngayTao;
     }
-    public void in(){
-        System.out.println(getId());
-        System.out.println(getLaiSuatNam());
-        System.out.println(getSodu());
-        System.out.println("ngay tao:"+getNgayTao());
+
+    public double getLaiSuatThang() {
+        return laiSuatNam / 12;
     }
+
+    public double getLoiNhuanHangThang() {
+        return sodu * getLaiSuatThang();
+    }
+
+    public void rutTien(double value) {
+        sodu = sodu - value;
+    }
+
+    public void napTien(double value) {
+        sodu = sodu + value;
+    }
+
+    public String toString() {
+        return "Acount co id la: " + getId() + "\n" + "so du:" + getSodu() + "\nLoi nhuan thang:" + getLoiNhuanHangThang() + "\nNgay tao:" + getNgayTao();
+    }
+
 }
