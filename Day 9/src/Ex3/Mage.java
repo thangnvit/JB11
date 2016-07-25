@@ -1,42 +1,56 @@
 package Ex3;
 
-public class Mage extends Character {
+public class Mage extends Hero {
+
     public Mage(String name) {
-        this.setWeapon(null);
-        this.setArmor(null);
-        this.setName(name);
-        this.setLevel(1);
-        this.setStrength(1);
-        this.setDexterity(1);
-        this.setIntelligence(5);
-        this.setAttack(1);
-        this.setDefense(1);
+        this.name = name;
+        strength = 1;
+        dexterity = 1;
+        intelligence = 5;
     }
 
-    public void setAttack() {
-        if (getWeapon() == null) {
-            setAttack(getLevel() + getIntelligence());
-        } else if (getWeapon().getName() == "Staff") {
-            setAttack(getIntelligence() + getLevel() + getWeapon().getLevel() + getWeapon().getLevel() * 2);
+    @Override
+    public void setWeapon(Weapons weapon) {
+        super.weapon = weapon;
+        if (weapon == null) {
+            attack = level +intelligence;
+        } else if (weapon.getName() == "Staff") {
+            attack= intelligence + level + weapon.getLevel() + weapon.getLevel() * 2;
         } else {
-            setAttack(getLevel() + getWeapon().getLevel() + getIntelligence());
+            attack = level + weapon.getLevel() + intelligence;
         }
     }
 
-    public void setDefense() {
-        if (getArmor() == null) {
-            setDefense(getLevel());
-        } else if (getArmor().getName() == "Robes") {
-            setDefense(getLevel() + getArmor().getLevel() + getArmor().getLevel() * 2);
+    @Override
+    public void setArmor(Armors armor) {
+        super.armor = armor;
+        if (armor == null) {
+            defense = level;
+        } else if (armor.getName() == "Robes") {
+            defense =  level + armor.getLevel() + armor.getLevel() * 2;
         } else {
-            setDefense(getLevel() + getArmor().getLevel());
+            defense = level + armor.getLevel();
         }
     }
 
+    @Override
+    public String tauntLine() {
+        return "Mind over matter";
+    }
+
+    @Override
     public String toString() {
-        if(this.getArmor() == null && this.getWeapon() == null)
-            return "Type of character: Warrior\n" + "Name: " + getName() + "\nLevel: " + getLevel() + "\nAttack:" + getAttack() + "\nDefense:" + getDefense() + "\nIntelligence:" + getIntelligence() + "\nMind over matter\n";
-        return "Type of character: Mage\n" + "Name: " + getName() + "\nLevel: " + getLevel() + "\nAttack:" + getAttack() + "\nDefense:" + getDefense() + "\nIntelligence:" + getIntelligence() + "\nMind over matter\n" + "Weapon's combat line:" + getWeapon().getMesseage() + "\nArmor's combat line:" + getArmor().getMesseage();
+        return "Mage {" + super.toString();
+    }
+
+    public static void main(String[] args) {
+        Mage mg = new Mage("thang");
+        Weapons wp = new Weapons("Staff",2);
+        mg.setWeapon(wp);
+        Armors ar = new Armors("Clothes",3);
+        mg.setArmor(ar);
+        System.out.println(mg.toString());
+
     }
 }
 

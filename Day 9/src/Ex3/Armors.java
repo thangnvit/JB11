@@ -1,26 +1,15 @@
 package Ex3;
 
-public class Armors {
-    private String name;
-    private int level;
-
-    public Armors() {
+/**
+ * Created by DEV on 7/25/2016.
+ */
+public class Armors extends Equipment{
+    public Armors(){}
+    public Armors(String name,int level){
+        super(name,level);
     }
-
-    public Armors(String name, int level) {
-        this.name = name;
-        this.level = level;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public String getMesseage() {
+    @Override
+    public String getMesseage(){
         if (this.name == null)
             return null;
         switch (this.name) {
@@ -35,5 +24,10 @@ public class Armors {
             default:
                 return null;
         }
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

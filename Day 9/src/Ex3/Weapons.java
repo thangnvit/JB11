@@ -1,25 +1,22 @@
 package Ex3;
 
-public class Weapons {
-    private String name;
-    private int level;
+/**
+ * Created by DEV on 7/25/2016.
+ */
+public class Weapons extends Equipment {
+    public Weapons(){
 
-    public Weapons() {
+    }
+    public Weapons(String name,int level){
+        super(name,level);
     }
 
-    public Weapons(String name, int level) {
-        this.name = name;
-        this.level = level;
+    @Override
+    public String toString() {
+        return super.toString();
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
+    @Override
     public String getMesseage() {
         if (this.name == null)
             return null;
@@ -35,5 +32,6 @@ public class Weapons {
             default:
                 return null;
         }
+
     }
 }

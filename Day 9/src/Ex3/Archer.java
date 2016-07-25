@@ -1,42 +1,46 @@
 package Ex3;
 
-public class Archer extends Character {
+/**
+ * Created by DEV on 7/25/2016.
+ */
+public class Archer extends Hero {
     public Archer(String name) {
-        this.setWeapon(null);
-        this.setArmor(null);
-        this.setName(name);
-        this.setLevel(1);
-        this.setStrength(1);
-        this.setDexterity(5);
-        this.setIntelligence(1);
-        this.setAttack(1);
-        this.setDefense(1);
+        this.name = name;
+        strength = 1;
+        dexterity = 5;
+        intelligence = 1;
     }
-
-    public void setAttack() {
-        if (getWeapon() == null) {
-            setAttack(getLevel() + getDexterity());
-        } else if (getWeapon().getName() == "Bow") {
-            setAttack(getDexterity() + getLevel() + getWeapon().getLevel() + getWeapon().getLevel() * 2);
+    @Override
+    public void setWeapon(Weapons weapon) {
+        super.weapon = weapon;
+        if (weapon == null) {
+            attack = level + dexterity;
+        } else if (weapon.getName() == "Staff") {
+            attack= dexterity + level + weapon.getLevel() + weapon.getLevel() * 2;
         } else {
-            setAttack(getLevel() + getWeapon().getLevel() + getDexterity());
+            attack = level + weapon.getLevel() + dexterity;
         }
     }
 
-    public void setDefense() {
-        if (getArmor() == null) {
-            setDefense(getLevel());
-        } else if (getArmor().getName() == "Leather") {
-            setDefense(getLevel() + getArmor().getLevel() + getArmor().getLevel() * 2);
+    @Override
+    public void setArmor(Armors armor) {
+        super.armor = armor;
+        if (armor == null) {
+            defense = level;
+        } else if (armor.getName() == "Robes") {
+            defense =  level + armor.getLevel() + armor.getLevel() * 2;
         } else {
-            setDefense(getLevel() + getArmor().getLevel());
+            defense = level + armor.getLevel();
         }
     }
 
+    @Override
+    public String tauntLine() {
+        return "Aim twice,shoot once";
+    }
+
+    @Override
     public String toString() {
-        if(this.getArmor() == null && this.getWeapon() == null)
-            return "Type of character: Warrior\n" + "Name: " + getName() + "\nLevel: " + getLevel() + "\nAttack:" + getAttack() + "\nDefense:" + getDefense() + "\nIntelligence:" + getIntelligence() + "\nAim twice,shoot once\n";
-        return "Type of character: Archer\n" + "Name: " + getName() + "\nLevel: " + getLevel() + "\nAttack:" + getAttack() + "\nDefense:" + getDefense() + "\nIntelligence:" + getIntelligence() + "\nAim twice,shoot once\n" + "Weapon's combat line:" + getWeapon().getMesseage() + "\nArmor's combat line:" + getArmor().getMesseage();
+        return "Archer {" + super.toString();
     }
-
 }

@@ -1,37 +1,56 @@
 package Ex3;
 
-public class Hero extends Character {
+public abstract class Hero {
+    protected String name;
+    protected Weapons weapon;
+    protected Armors armor;
+    protected int level, strength, dexterity, intelligence, attack, defense, hp = 100;
+
+    public Hero() {
+        armor = new Armors();
+        weapon = new Weapons();
+    }
+
     public Hero(String name) {
-        this.setWeapon(null);
-        this.setArmor(null);
-        this.setName(name);
-        this.setLevel(1);
-        this.setStrength(1);
-        this.setDexterity(1);
-        this.setIntelligence(1);
-        this.setAttack(1);
-        this.setDefense(1);
+        this.name = name;
     }
 
-    public void setAttack() {
-        if (getWeapon() == null) {
-            setAttack(getLevel());
-        } else {
-            setAttack(getLevel() + getWeapon().getLevel() + getWeapon().getLevel() * 2);
-        }
+    public Hero(String name, int defense, int attack, int dexterity, int intelligence, int strength, int level, Armors armor, Weapons weapon) {
+        this.name = name;
+        this.defense = defense;
+        this.attack = attack;
+        this.dexterity = dexterity;
+        this.intelligence = intelligence;
+        this.strength = strength;
+        this.level = level;
+        this.armor = armor;
+        this.weapon = weapon;
     }
 
-    public void setDefense() {
-        if (getArmor() == null) {
-            setDefense(getLevel());
-        } else {
-            setDefense(getLevel() + getArmor().getLevel() + getArmor().getLevel() * 2);
-        }
+    public abstract void setArmor(Armors armor);
+
+    public abstract void setWeapon(Weapons weapon);
+
+    public String tauntLine() {
+        return "I am ready for anything";
     }
 
+    @Override
     public String toString() {
-        if(this.getArmor() == null && this.getWeapon() == null)
-            return "Type of character: Hero\n" + "Name: " + getName() + "\nLevel: " + getLevel() + "\nAttack:" + getAttack() + "\nDefense:" + getDefense() + "\nIntelligence:" + getIntelligence() + "\nI am ready for anything\n";
-        return "Type of character: Hero\n" + "Name: " + getName() + "\nLevel: " + getLevel() + "\nAttack:" + getAttack() + "\nDefense:" + getDefense() + "\nIntelligence:" + getIntelligence() + "\nI am ready for anything\n" + "Weapon's combat line:" + getWeapon().getMesseage() + "\nArmor's combat line:" + getArmor().getMesseage();
+        return
+                "name='" + name + '\'' +
+                ", weapon(" + weapon +
+                ", armor(" + armor +
+                ", level=" + level +
+                ", strength=" + strength +
+                ", dexterity=" + dexterity +
+                ", intelligence=" + intelligence +
+                ", attack=" + attack +
+                ", defense=" + defense +
+                ", hp=" + hp +
+                '}' +
+                "\n Here'staunt line:" + tauntLine() +
+                "\n Weapon's combat line:" + weapon.getMesseage() +
+                "\n Armor's combat line:" + armor.getMesseage();
     }
 }
