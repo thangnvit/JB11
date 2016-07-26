@@ -27,30 +27,39 @@ public abstract class Hero {
         this.weapon = weapon;
     }
 
-    public abstract void setArmor(Armors armor);
+    public abstract void setEquipment(Weapons weapon,Armors armor);
 
-    public abstract void setWeapon(Weapons weapon);
 
-    public String tauntLine() {
-        return "I am ready for anything";
-    }
+    public abstract String tauntLine();
+
+//    public int getStrengthBonus(Equipment equipment) {
+//       return this.strength += equipment.strength;
+//    }
+//
+//    public int  getDexterityBonus(Equipment equipment) {
+//        return this.dexterity += weapon.dexterity;
+//    }
+//
+//    public int getIntelligenceBonus(Equipment equipment) {
+//        return this.intelligence += weapon.intelligence;
+//    }
 
     @Override
     public String toString() {
         return
                 "name='" + name + '\'' +
-                ", weapon(" + weapon +
-                ", armor(" + armor +
-                ", level=" + level +
-                ", strength=" + strength +
-                ", dexterity=" + dexterity +
-                ", intelligence=" + intelligence +
-                ", attack=" + attack +
-                ", defense=" + defense +
-                ", hp=" + hp +
-                '}' +
-                "\n Here'staunt line:" + tauntLine() +
-                "\n Weapon's combat line:" + weapon.getMesseage() +
-                "\n Armor's combat line:" + armor.getMesseage();
+                        ", weapon(" + weapon +
+                        ", armor(" + armor +
+                        ", level=" + level +
+                        ", strength=" + strength +
+                        ", dexterity=" + dexterity +
+                        ", intelligence=" + intelligence +
+                        ", attack=" + attack +
+                        ", defense=" + defense +
+                        ", hp=" + hp +
+                        '}' +
+                        "\n Here'staunt line:" + tauntLine() +
+                        "\n Weapon's combat line:" + weapon.getCombatLine()+
+                        "\n Armor's combat line:" + armor.getCombatLine();
     }
 }

@@ -10,26 +10,18 @@ public class Mage extends Hero {
     }
 
     @Override
-    public void setWeapon(Weapons weapon) {
-        super.weapon = weapon;
+    public void setEquipment(Weapons weapon, Armors armor) {
         if (weapon == null) {
-            attack = level +intelligence;
-        } else if (weapon.getName() == "Staff") {
-            attack= intelligence + level + weapon.getLevel() + weapon.getLevel() * 2;
+            this.attack = level;
+        } else if (armor == null) {
+            this.defense = level;
         } else {
-            attack = level + weapon.getLevel() + intelligence;
-        }
-    }
-
-    @Override
-    public void setArmor(Armors armor) {
-        super.armor = armor;
-        if (armor == null) {
-            defense = level;
-        } else if (armor.getName() == "Robes") {
-            defense =  level + armor.getLevel() + armor.getLevel() * 2;
-        } else {
-            defense = level + armor.getLevel();
+            this.weapon.setName(weapon.name);
+            this.armor.setName(armor.name);
+            this.weapon.setLevel(weapon.level);
+            this.armor.setLevel(armor.level);
+            this.attack = this.level + weapon.level + weapon.getIntelligenceBonus();
+            this.defense = this.level + armor.level + armor.getIntelligenceBonus();
         }
     }
 
@@ -43,14 +35,5 @@ public class Mage extends Hero {
         return "Mage {" + super.toString();
     }
 
-    public static void main(String[] args) {
-        Mage mg = new Mage("thang");
-        Weapons wp = new Weapons("Staff",2);
-        mg.setWeapon(wp);
-        Armors ar = new Armors("Clothes",3);
-        mg.setArmor(ar);
-        System.out.println(mg.toString());
-
-    }
 }
 

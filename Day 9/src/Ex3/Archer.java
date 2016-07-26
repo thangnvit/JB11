@@ -4,33 +4,27 @@ package Ex3;
  * Created by DEV on 7/25/2016.
  */
 public class Archer extends Hero {
+    public Archer() {
+    }
+
     public Archer(String name) {
         this.name = name;
         strength = 1;
         dexterity = 5;
         intelligence = 1;
     }
-    @Override
-    public void setWeapon(Weapons weapon) {
-        super.weapon = weapon;
-        if (weapon == null) {
-            attack = level + dexterity;
-        } else if (weapon.getName() == "Staff") {
-            attack= dexterity + level + weapon.getLevel() + weapon.getLevel() * 2;
-        } else {
-            attack = level + weapon.getLevel() + dexterity;
-        }
-    }
 
     @Override
-    public void setArmor(Armors armor) {
-        super.armor = armor;
-        if (armor == null) {
-            defense = level;
-        } else if (armor.getName() == "Robes") {
-            defense =  level + armor.getLevel() + armor.getLevel() * 2;
+    public void setEquipment(Weapons weapon, Armors armor) {
+        if (weapon == null) {
+            this.attack = level;
+        } else if (armor == null) {
+            this.defense = level;
         } else {
-            defense = level + armor.getLevel();
+            this.weapon = weapon;
+            this.armor = armor;
+            this.attack = this.level + weapon.level + weapon.getDexterityBonus();
+            this.defense = this.level + armor.level + armor.getDexterityBonus();
         }
     }
 
@@ -42,5 +36,13 @@ public class Archer extends Hero {
     @Override
     public String toString() {
         return "Archer {" + super.toString();
+    }
+
+    public static void main(String[] args) {
+        Archer ar = new Archer("thang");
+        Weapons weapon = new Weapons("Axe", "Axe day", 2, 1, 2, 3);
+        Armors armor = new Armors("Clothes", "Clothes day", 4, 4, 3, 1);
+        ar.setEquipment(weapon, armor);
+        System.out.println(ar.toString());
     }
 }

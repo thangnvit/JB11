@@ -12,26 +12,18 @@ public class Warrior extends Hero {
     }
 
     @Override
-    public void setWeapon(Weapons weapon) {
-        super.weapon = weapon;
+    public void setEquipment(Weapons weapon, Armors armor) {
         if (weapon == null) {
-            attack = level + strength;
-        } else if (weapon.getName() == "Staff") {
-            attack = strength + level + weapon.getLevel() + weapon.getLevel() * 2;
+            this.attack = level;
+        } else if (armor == null) {
+            this.defense = level;
         } else {
-            attack = level + weapon.getLevel() + strength;
-        }
-    }
-
-    @Override
-    public void setArmor(Armors armor) {
-        super.armor = armor;
-        if (armor == null) {
-            defense = level;
-        } else if (armor.getName() == "Robes") {
-            defense = level + armor.getLevel() + armor.getLevel() * 2;
-        } else {
-            defense = level + armor.getLevel();
+            this.weapon.setName(weapon.name);
+            this.armor.setName(armor.name);
+            this.weapon.setLevel(weapon.level);
+            this.armor.setLevel(armor.level);
+            this.attack = this.level + weapon.level + weapon.getStrengthBonus();
+            this.defense = this.level + armor.level + armor.getStrengthBonus();
         }
     }
 
