@@ -32,6 +32,11 @@ public abstract class Hero {
 
     public abstract String tauntLine();
 
+    public Hero changeHero(Hero hero){
+        Hero temp;
+        temp = hero;
+        return temp;
+        }
 //    public int getStrengthBonus(Equipment equipment) {
 //       return this.strength += equipment.strength;
 //    }

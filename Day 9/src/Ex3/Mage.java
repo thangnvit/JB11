@@ -1,7 +1,9 @@
 package Ex3;
 
 public class Mage extends Hero {
+    public Mage(){
 
+    }
     public Mage(String name) {
         this.name = name;
         strength = 1;

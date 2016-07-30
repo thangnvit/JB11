@@ -4,6 +4,9 @@ package Ex3;
  * Created by DEV on 7/25/2016.
  */
 public class Warrior extends Hero {
+    public Warrior(){
+
+    }
     public Warrior(String name) {
         this.name = name;
         strength = 5;

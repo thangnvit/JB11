@@ -27,7 +27,7 @@ public class Archer extends Hero {
             this.defense = this.level + armor.level + armor.getDexterityBonus();
         }
     }
-
+    public void asd(){}
     @Override
     public String tauntLine() {
         return "Aim twice,shoot once";
@@ -43,6 +43,10 @@ public class Archer extends Hero {
         Weapons weapon = new Weapons("Axe", "Axe day", 2, 1, 2, 3);
         Armors armor = new Armors("Clothes", "Clothes day", 4, 4, 3, 1);
         ar.setEquipment(weapon, armor);
-        System.out.println(ar.toString());
+        Hero wr = new Warrior();
+        System.out.println("Truoc khi doi "+ wr);
+        wr =  (Archer) (wr.changeHero(ar));
+
+        System.out.println(wr.toString());
     }
 }
