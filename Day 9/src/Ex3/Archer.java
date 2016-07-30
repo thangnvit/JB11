@@ -44,8 +44,8 @@ public class Archer extends Hero {
         Armors armor = new Armors("Clothes", "Clothes day", 4, 4, 3, 1);
         ar.setEquipment(weapon, armor);
         Hero wr = new Warrior();
-        System.out.println("Truoc khi doi "+ wr.toString()+"\n");
+        System.out.println("Truoc khi doi \n"+ wr.toString()+"\n");
         wr =  wr.changeHero(ar);
-        System.out.println("Sau khi doi" +wr.toString() +"\n");
+        System.out.println("Sau khi doi \n" +wr.toString() +"\n");
     }
 }
