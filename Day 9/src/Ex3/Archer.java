@@ -1,5 +1,7 @@
 package Ex3;
 
+import javafx.scene.shape.Arc;
+
 /**
  * Created by DEV on 7/25/2016.
  */
@@ -40,12 +42,15 @@ public class Archer extends Hero {
 
     public static void main(String[] args) {
         Archer ar = new Archer("thang");
-        Weapons weapon = new Weapons("Axe", "Axe day", 2, 1, 2, 3);
+        Weapons weapon = new Weapons("Bow", "Axe day", 2, 1, 2, 3);
         Armors armor = new Armors("Clothes", "Clothes day", 4, 4, 3, 1);
         ar.setEquipment(weapon, armor);
-        Hero wr = new Warrior();
-        System.out.println("Truoc khi doi \n"+ wr.toString()+"\n");
-        wr =  wr.changeHero(ar);
-        System.out.println("Sau khi doi \n" +wr.toString() +"\n");
+        Warrior wr = new Warrior();
+        System.out.println("Truoc khi doi \n"+ wr);
+        Archer newWr = new Archer();
+        newWr = (Archer) (wr.changeHero(ar));
+        System.out.println("Sau khi doi\n"+ newWr);
+//        System.out.println(b);
+        //        System.out.println("Sau khi doi \n" +wr.toString() +"\n");
     }
 }

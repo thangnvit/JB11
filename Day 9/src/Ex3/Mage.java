@@ -18,10 +18,8 @@ public class Mage extends Hero {
         } else if (armor == null) {
             this.defense = level;
         } else {
-            this.weapon.setName(weapon.name);
-            this.armor.setName(armor.name);
-            this.weapon.setLevel(weapon.level);
-            this.armor.setLevel(armor.level);
+            this.weapon =weapon;
+            this.armor =armor;
             this.attack = this.level + weapon.level + weapon.getIntelligenceBonus();
             this.defense = this.level + armor.level + armor.getIntelligenceBonus();
         }

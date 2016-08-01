@@ -27,16 +27,16 @@ public abstract class Hero {
         this.weapon = weapon;
     }
 
-    public abstract void setEquipment(Weapons weapon,Armors armor);
+    public abstract void setEquipment(Weapons weapon, Armors armor);
 
 
     public abstract String tauntLine();
 
-    public Hero changeHero(Hero hero){
+    public Hero changeHero(Hero hero) {
         Hero temp;
         temp = hero;
         return temp;
-        }
+    }
 //    public int getStrengthBonus(Equipment equipment) {
 //       return this.strength += equipment.strength;
 //    }
@@ -64,7 +64,7 @@ public abstract class Hero {
                         ", hp=" + hp +
                         '}' +
                         "\n Here'staunt line:" + tauntLine() +
-                        "\n Weapon's combat line:" + weapon.getCombatLine()+
+                        "\n Weapon's combat line:" + weapon.getCombatLine() +
                         "\n Armor's combat line:" + armor.getCombatLine();
     }
 }
