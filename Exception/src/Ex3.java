@@ -2,9 +2,6 @@
  * Created by DEV on 8/15/2016.
  */
 
-import com.sun.jmx.snmp.internal.SnmpSubSystem;
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Ex3 {

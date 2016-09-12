@@ -8,37 +8,26 @@ import java.util.*;
 public class Ex4_SizeFolder {
     public static void main(String[] args) {
         File file = new File("E:\\SAVE");
-        File[] files = file.listFiles();
+        Queue<File> queue = new LinkedList<>();
 
-        Queue<File> fileQueue = new LinkedList<>();
-        Queue<File> directoryQueue = new LinkedList<>();
-        Queue<File> genericQueue = new LinkedList<>();
-        genericQueue.addAll(Arrays.asList(files));
-        genericStream(genericQueue,directoryQueue,fileQueue);
+        System.out.println(getSize(queue, file));
     }
-    public static void genericStream(Queue<File> genericQueue,Queue<File> directoryQueue,Queue<File> fileQueue){
-        while (genericQueue.size() > 0) {
-            if (genericQueue.peek().isDirectory()) {
-                directoryQueue.offer(genericQueue.poll());
-            }else {
-                fileQueue.offer(genericQueue.poll());
+    public static long getSize(Queue<File> queue, File path) {
+        File file;
+        queue.addAll(Arrays.asList(path.listFiles()));
+        long size = 0;
+        while ((file = queue.poll()) != null) {
+            if (file.isFile()) {
+                size += file.length();
+                continue;
+            } else {
+                queue.addAll(Arrays.asList(file.listFiles()));
             }
         }
-    }
-    public static void fileInDrecotry(Queue<File> directoryQueue,Queue<File> genericQueue){
+        return size;
     }
 }
-//        for (File file1 : files) {
-//            if (file1.isDirectory()) {
-//                directoryQueue.offer(file1);
-//            } else {
-//                fileQueue.offer(file1);
-//            }
-//        }
-//        System.out.println(fileInDrecotry(directoryQueue));
-//        System.out.println(fileInDrecotry(directoryQueue));
-//    }
-//
+
 
 
 
