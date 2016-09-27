@@ -1,6 +1,7 @@
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 
 /**
  * Created by DEV on 9/19/2016.
@@ -21,29 +22,51 @@ public class Server {
     }
 
     public void startServer() {
+        System.out.println("Server is listening");
         try {
-            System.out.println("Server is listening...");
-            ServerSocket server = new ServerSocket(port);
+            ServerSocket serverSocket = new ServerSocket(port);
             while (true) {
-                Socket socket = server.accept();
+                Socket socket = serverSocket.accept();
                 System.out.println("Connected");
                 DataInputStream input = new DataInputStream(socket.getInputStream());
+                DataOutputStream output = new DataOutputStream(socket.getOutputStream());
                 String nameFile = input.readUTF();
-                File file = new File("D:\\test\\" + nameFile);
-                BufferedOutputStream writter = new BufferedOutputStream(new FileOutputStream(file));
-                byte[] buffer = new byte[1024];
-                while (input.read(buffer) != -1) {
-                    writter.write(buffer);
+                if(!checkNameFile(nameFile)){
+                    output.writeUTF("true");
+                    output.flush();
+                    File file = new File("D:\\test\\" + nameFile);
+                    BufferedOutputStream writter = new BufferedOutputStream(new FileOutputStream(file));
+                    byte[] buffer = new byte[1024];
+                    while (input.read(buffer) != -1){
+                        writter.write(buffer);
+                        System.out.println("F");
+                    }
+                    System.out.println("f");
+                    writter.flush();
+                    writter.close();
+                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                    bufferedWriter.write(file.getPath());
+                    bufferedWriter.newLine();
+                    bufferedWriter.close();
                 }
-                System.out.println("Ok");
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public static void main(String[] args) {
-        Server server = new Server(8000);
+        Server server = new Server(6969);
         server.startServer();
+    }
+
+    public static boolean checkNameFile(String nameFile) {
+        String[] check = {"\\", "\"", ":", "*", "?", ">", "<", "/", "|"};
+        for (String s : check) {
+            if (nameFile.contains(s))
+                return true;
+        }
+        return false;
     }
 }

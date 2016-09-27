@@ -26,74 +26,46 @@ public class ClientChat {
         try {
             socket = new Socket(serverName, port);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Failed to connect to port 8000", e);
         }
-    }
-
-    public String getServerName() {
-        return serverName;
-    }
-
-    public void setServerName(String serverName) {
-        this.serverName = serverName;
-    }
-
-    public int getPort() {
-        return port;
-    }
-
-    public void setPort(int port) {
-        this.port = port;
     }
 
     public void startClient() {
-        new Thread(() -> {
+        new receiveMesseage().start();
+        try {
+            BufferedWriter writter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             while (true) {
                 text = scan.nextLine();
-                sendData(text);
+                writter.write(nickName + ":" + text);
+                writter.newLine();
+                writter.flush();
             }
-        }).start();
-        new Thread(() -> {
-            while (true) {
-                try {
-                    receiveData();
-                } catch (InterruptedIOException e) {
-                    e.printStackTrace();
-                    return;
-                }
-            }
-        }).start();
-    }
-
-    public void sendData(String text) {
-        try {
-            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            writer.write(nickName + ":" + text);
-            writer.newLine();
-            writer.flush();
         } catch (IOException e) {
+            System.out.println("Failed to send Messeage!");
             e.printStackTrace();
         }
-    }
-
-    public String receiveData() throws InterruptedIOException {
-        try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            System.out.println(reader.readLine());
-        } catch (SocketException e) {
-            throw new InterruptedIOException("Server Error!");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        String nickname;
         System.out.println("nick name:");
-        nickname = scan.nextLine();
+        String nickname = scan.nextLine();
         ClientChat clientChat = new ClientChat("localhost", 8000, nickname);
         clientChat.startClient();
+    }
+
+    public class receiveMesseage extends Thread {
+        @Override
+        public void run() {
+            try {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                while (true) {
+                    System.out.println(reader.readLine());
+                }
+            } catch (IOException e) {
+                System.out.println("Failed to receive Messeage!");
+                e.printStackTrace();
+            }
+        }
     }
 }

@@ -1,3 +1,4 @@
+import javax.management.relation.RoleUnresolved;
 import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -6,11 +7,11 @@ import java.util.List;
 /**
  * Created by DEV on 9/25/2016.
  */
-public class ThreadHanldeClient extends Thread {
+public class ClientHanlde extends Thread {
     private Socket socket;
     private List<Socket> socketList;
 
-    public ThreadHanldeClient(Socket socket, List<Socket> socketList) {
+    public ClientHanlde(Socket socket, List<Socket> socketList) {
         this.socket = socket;
         this.socketList = socketList;
     }
@@ -29,7 +30,13 @@ public class ThreadHanldeClient extends Thread {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            try {
+                System.out.println("A socket disconnect");
+                socketList.remove(socket);
+                socket.close();
+            } catch (IOException e1) {
+                e.printStackTrace();
+            }
         }
     }
 }

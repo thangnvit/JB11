@@ -41,7 +41,7 @@ public  class TramThoiTiet {
     }
 
     @Override
-    public String toString() { \
+    public String toString() {
         if(this.mua == true){
             return "Dang mua";
         }

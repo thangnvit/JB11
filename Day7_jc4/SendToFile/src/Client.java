@@ -34,17 +34,31 @@ public class Client {
         this.port = port;
     }
 
-    public void startClient(){
+    public void startClient() {
+        BufferedOutputStream writter = null;
+        BufferedInputStream reader = null;
         try {
-            Socket socket = new Socket(serverName,port);
+            reader = new BufferedInputStream(new FileInputStream(file));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            Socket socket = new Socket(serverName, port);
+            DataInputStream input = new DataInputStream(socket.getInputStream());
             DataOutputStream output = new DataOutputStream(socket.getOutputStream());
-            BufferedInputStream reader = new BufferedInputStream(new FileInputStream(file));
             output.writeUTF(file.getName());
-            byte[] buffer = new byte[1024];
-            while (reader.read(buffer) !=-1 ){
-                output.write(buffer);
-            }
             output.flush();
+            if(input.readUTF() != "false"){
+                byte[] buffer = new byte[1024];
+                while (reader.read(buffer) != -1){
+                    output.write(buffer);
+                    output.flush();
+                }
+                output.flush();
+            }
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            String filePath = bufferedReader.readLine();
+            System.out.println("Path" + filePath);
             socket.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -52,8 +66,8 @@ public class Client {
     }
 
     public static void main(String[] args) {
-        Client client = new Client("localhost",8000);
-        File file = new File("D:\\SAVE\\music\\Yeu Voi Vang - Le Bao Binh.mp3");
+        Client client = new Client("localhost", 6969);
+        File file = new File("D:\\dev\\project\\activestudy\\JB11\\Day7_jc4.zip");
         client.setFile(file);
         client.startClient();
     }

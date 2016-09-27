@@ -1,7 +1,3 @@
-import com.sun.org.apache.xpath.internal.SourceTree;
-import com.sun.xml.internal.stream.Entity;
-import com.sun.xml.internal.stream.util.ThreadLocalBufferAllocator;
-
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -30,23 +26,21 @@ public class ServerChat {
         try {
             serverSocket = new ServerSocket(port);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Falied create server at port 8000",e);
         }
     }
 
     public void startServer() {
-        new Thread(()->{
             while (true) {
                 try {
                     Socket socket = serverSocket.accept();
                     System.out.println("Connected");
                     socketList.add(socket);
-                    new ThreadHanldeClient(socket,socketList).start();
+                    new ClientHanlde(socket,socketList).start();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-        }).start();
     }
 
 

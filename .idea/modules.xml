@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Day7_jc4/CalculatedArea/CalculatedArea.iml" filepath="$PROJECT_DIR$/Day7_jc4/CalculatedArea/CalculatedArea.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day7_jc4/ChatRoom/ChatRoom.iml" filepath="$PROJECT_DIR$/Day7_jc4/ChatRoom/ChatRoom.iml" />
       <module fileurl="file://$PROJECT_DIR$/JBasic/Day 13/Day 13.iml" filepath="$PROJECT_DIR$/JBasic/Day 13/Day 13.iml" />
       <module fileurl="file://$PROJECT_DIR$/JBasic/Day 5/Day 5.iml" filepath="$PROJECT_DIR$/JBasic/Day 5/Day 5.iml" />
       <module fileurl="file://$PROJECT_DIR$/JBasic/Day 6/Day 6.iml" filepath="$PROJECT_DIR$/JBasic/Day 6/Day 6.iml" />
@@ -9,10 +11,10 @@
       <module fileurl="file://$PROJECT_DIR$/JBasic/Day 9/Day 9.iml" filepath="$PROJECT_DIR$/JBasic/Day 9/Day 9.iml" />
       <module fileurl="file://$PROJECT_DIR$/JBasic/Day11/Day11.iml" filepath="$PROJECT_DIR$/JBasic/Day11/Day11.iml" />
       <module fileurl="file://$PROJECT_DIR$/JBasic/Day3/Day3.iml" filepath="$PROJECT_DIR$/JBasic/Day3/Day3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/JC4/Day3-ThucHanh-InPutOutPut.iml" filepath="$PROJECT_DIR$/JC4/Day3-ThucHanh-InPutOutPut.iml" />
       <module fileurl="file://$PROJECT_DIR$/Day3_Jc4/Day3_Jc4.iml" filepath="$PROJECT_DIR$/Day3_Jc4/Day3_Jc4.iml" />
       <module fileurl="file://$PROJECT_DIR$/JBasic/Day4/Day4.iml" filepath="$PROJECT_DIR$/JBasic/Day4/Day4.iml" />
       <module fileurl="file://$PROJECT_DIR$/Day5_jc4/Day5_jc4.iml" filepath="$PROJECT_DIR$/Day5_jc4/Day5_jc4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day7_jc4/Day7_jc4.iml" filepath="$PROJECT_DIR$/Day7_jc4/Day7_jc4.iml" />
       <module fileurl="file://$PROJECT_DIR$/JBasic/Day 9/Ex1.iml" filepath="$PROJECT_DIR$/JBasic/Day 9/Ex1.iml" />
       <module fileurl="file://$PROJECT_DIR$/JBasic/Day 9/Ex_1.iml" filepath="$PROJECT_DIR$/JBasic/Day 9/Ex_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/JBasic/Day 9/Ex_2.iml" filepath="$PROJECT_DIR$/JBasic/Day 9/Ex_2.iml" />
@@ -24,8 +26,8 @@
       <module fileurl="file://$PROJECT_DIR$/JBasic/JBasic.iml" filepath="$PROJECT_DIR$/JBasic/JBasic.iml" />
       <module fileurl="file://$PROJECT_DIR$/KiemTraJB/KiemTraJB.iml" filepath="$PROJECT_DIR$/KiemTraJB/KiemTraJB.iml" />
       <module fileurl="file://$PROJECT_DIR$/Day3_Jc4/Mahoa/Mahoa.iml" filepath="$PROJECT_DIR$/Day3_Jc4/Mahoa/Mahoa.iml" />
-      <module fileurl="file://$PROJECT_DIR$/NetWorking/NetWorking.iml" filepath="$PROJECT_DIR$/NetWorking/NetWorking.iml" />
       <module fileurl="file://$PROJECT_DIR$/OOP/OOP.iml" filepath="$PROJECT_DIR$/OOP/OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day7_jc4/SendToFile/SendToFile.iml" filepath="$PROJECT_DIR$/Day7_jc4/SendToFile/SendToFile.iml" />
     </modules>
   </component>
 </project>
