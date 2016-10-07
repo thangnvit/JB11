@@ -24,5 +24,9 @@ public class Main {
         ProductManager prdManager = new ProductManager(a);
         prdManager.showAllProduct();
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/heads/master
     }
 }

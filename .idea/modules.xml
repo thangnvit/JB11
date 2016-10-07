@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/JBasic/Day4/Day4.iml" filepath="$PROJECT_DIR$/JBasic/Day4/Day4.iml" />
       <module fileurl="file://$PROJECT_DIR$/Day5_jc4/Day5_jc4.iml" filepath="$PROJECT_DIR$/Day5_jc4/Day5_jc4.iml" />
       <module fileurl="file://$PROJECT_DIR$/Day7_jc4/Day7_jc4.iml" filepath="$PROJECT_DIR$/Day7_jc4/Day7_jc4.iml" />
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/JBasic/Day 9/Ex1.iml" filepath="$PROJECT_DIR$/JBasic/Day 9/Ex1.iml" />
       <module fileurl="file://$PROJECT_DIR$/JBasic/Day 9/Ex_1.iml" filepath="$PROJECT_DIR$/JBasic/Day 9/Ex_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/JBasic/Day 9/Ex_2.iml" filepath="$PROJECT_DIR$/JBasic/Day 9/Ex_2.iml" />
@@ -23,6 +24,16 @@
       <module fileurl="file://$PROJECT_DIR$/Day3_Jc4/FileSplitter_JC4/FileSplitter_JC4.iml" filepath="$PROJECT_DIR$/Day3_Jc4/FileSplitter_JC4/FileSplitter_JC4.iml" />
       <module fileurl="file://$PROJECT_DIR$/Day3_Jc4/GiaiMa/GiaiMa.iml" filepath="$PROJECT_DIR$/Day3_Jc4/GiaiMa/GiaiMa.iml" />
       <module fileurl="file://$PROJECT_DIR$/JB11.iml" filepath="$PROJECT_DIR$/JB11.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/Day3_Jc4/EmLaConGaFuck.iml" filepath="$PROJECT_DIR$/Day3_Jc4/EmLaConGaFuck.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBasic/Day 9/Ex1.iml" filepath="$PROJECT_DIR$/JBasic/Day 9/Ex1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBasic/Day 9/Ex_1.iml" filepath="$PROJECT_DIR$/JBasic/Day 9/Ex_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JBasic/Day 9/Ex_2.iml" filepath="$PROJECT_DIR$/JBasic/Day 9/Ex_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exception/Exception.iml" filepath="$PROJECT_DIR$/Exception/Exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day3_Jc4/FileJoiner/FileJoiner.iml" filepath="$PROJECT_DIR$/Day3_Jc4/FileJoiner/FileJoiner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day3_Jc4/FileSplitter_JC4/FileSplitter_JC4.iml" filepath="$PROJECT_DIR$/Day3_Jc4/FileSplitter_JC4/FileSplitter_JC4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day3_Jc4/GiaiMa/GiaiMa.iml" filepath="$PROJECT_DIR$/Day3_Jc4/GiaiMa/GiaiMa.iml" />
+>>>>>>> refs/heads/master
       <module fileurl="file://$PROJECT_DIR$/JBasic/JBasic.iml" filepath="$PROJECT_DIR$/JBasic/JBasic.iml" />
       <module fileurl="file://$PROJECT_DIR$/KiemTraJB/KiemTraJB.iml" filepath="$PROJECT_DIR$/KiemTraJB/KiemTraJB.iml" />
       <module fileurl="file://$PROJECT_DIR$/Day3_Jc4/Mahoa/Mahoa.iml" filepath="$PROJECT_DIR$/Day3_Jc4/Mahoa/Mahoa.iml" />
