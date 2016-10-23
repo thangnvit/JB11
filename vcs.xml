@@ -10,6 +10,10 @@
           <option name="url" value="https://github.com/emara-geek/camera-recorder.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/opencv-java/getting-started.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="D:\dev\project\activestudy" />
